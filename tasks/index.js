@@ -6,7 +6,7 @@ const {
   },
   utils: { defaultAbiCoder },
 } = require("ethers");
-const { MINICHEF_ADDRESS } = require("@sushiswap/core-sdk");
+const { MINICHEF_ADDRESS } = require("@gcm-galbadrakh/core-sdk");
 
 const fs = require("fs");
 

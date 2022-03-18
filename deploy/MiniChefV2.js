@@ -1,4 +1,4 @@
-const { SUSHI_ADDRESS } = require("@sushiswap/core-sdk");
+const { SUSHI_ADDRESS } = require("@gcm-galbadrakh/core-sdk");
 
 module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   const { deploy } = deployments;
@@ -9,7 +9,7 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 
   let sushiAddress;
 
-  if (chainId === "31337") {
+  if (chainId === "31337" || chainId === '80001') {
     sushiAddress = (await deployments.get("SushiToken")).address;
   } else if (chainId in SUSHI_ADDRESS) {
     sushiAddress = SUSHI_ADDRESS[chainId];

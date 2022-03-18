@@ -1,4 +1,4 @@
-const { WETH_ADDRESS } = require("@sushiswap/core-sdk")
+const { WNATIVE_ADDRESS } = require("@gcm-galbadrakh/core-sdk")
 
 module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts, deployments }) {
   const { deploy } = deployments
@@ -15,8 +15,8 @@ module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts,
   
   if (chainId === '31337') {
     wethAddress = (await deployments.get("WETH9Mock")).address
-  } else if (chainId in WETH_ADDRESS) {
-    wethAddress = WETH_ADDRESS[chainId]
+  } else if (chainId in WNATIVE_ADDRESS) {
+    wethAddress = WNATIVE_ADDRESS[chainId]
   } else {
     throw Error("No WETH!")
   }
